@@ -123,11 +123,11 @@
     }
 
     .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(6.5px, 6.5px);
+      transform: rotate(45deg) translate(7.5px, 7.5px);
     }
 
     .hamburger.active span:nth-child(2) {
-      transform: rotate(-45deg) translate(6.5px, -6.5px);
+      transform: rotate(-45deg) translate(7.5px, -7.5px);
     }
 
     .mobile-nav {
