@@ -189,88 +189,122 @@
     }
 
     /* Hero Card Styles */
-    .container {
-      margin-top: 120px;
-      backdrop-filter: blur(16px) saturate(180%);
-      -webkit-backdrop-filter: blur(16px) saturate(180%);
-      background-color: rgba(17, 25, 40, 0.25);
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.125);
-      padding: 38px;
-      filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      max-width: 400px;
-    }
 
-    .banner-image {
-      background-image: url('ChatGPT Image May 11, 2025, 04_10_14 AM.png');
-      background-position: center;
-      background-size: cover;
-      height: 300px;
-      width: 100%;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.25);
-    }
+.container {
+  width: 1200px !important;
+  padding: 0 !important;
+  margin-right: auto;
+  margin-left: auto;
 
-    h1 {
-      font-family: 'Noto Sans Bengali', sans-serif;
-      color: rgba(255,255,255,0.98);
-      font-size: 2.2rem;
-      margin-top: 16px;
-    }
+  @media screen and (min-width: 992px) and (max-width: 1439px) {
+    max-width: 1279px !important;
+    padding: 0 !important;
+    margin: 0 80px !important;
+    width: auto !important;
+  }
 
-    p {
-      color: #fff;
-      font-family: 'Noto Sans Bengali', sans-serif;
-      font-size: 0.9rem;
-      line-height: 150%;
-      letter-spacing: 1px;
-      margin-top: 8px;
-    }
+  @media screen and (max-width: 991px) {
+    max-width: 959px !important;
+    margin: 0 16px !important;
+    padding: 0 !important;
+    width: auto !important;
+  }
+}
 
-    .button-wrapper {
-      margin-top: 18px;
-      display: flex;
-      gap: 12px;
-    }
+.gradient-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  padding: 30px;
+  @media screen and (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+}
 
-    .btn {
-      border: none;
-      padding: 12px 24px;
-      border-radius: 24px;
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      cursor: pointer;
-    }
+.container-title {
+  text-align: center;
+  padding: 0 !important;
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 60px;
+}
 
-    .outline {
-      background: transparent;
-      color: var(--primary);
-      border: 1px solid rgba(0, 212, 255, 0.6);
-      transition: all .3s ease;
-    }
+.card {
+  max-width: 550px;
+  border: 0;
+  width: 100%;
+  margin-inline: auto;
+}
 
-    .outline:hover {
-      transform: scale(1.1);
-      color: rgba(255, 255, 255, 0.9);
-      border-color: rgba(255, 255, 255, 0.9);
-    }
+.container-card {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(71deg, #080509, #1a171c, #080509);
+  background-clip: padding-box;
+  border-radius: 45px;
+  padding: 40px;
+  img {
+    margin-bottom: 32px;
+  }
+}
 
-    .fill {
-      background: var(--primary);
-      color: rgba(255,255,255,0.95);
-      font-weight: bold;
-      transition: all .3s ease;
-    }
+.bg-green-box,
+.bg-white-box,
+.bg-yellow-box,
+.bg-blue-box {
+  position: relative;
+}
 
-    .fill:hover {
-      transform: scale(1.1);
-      filter: drop-shadow(0 8px 5px rgba(0,0,0,0.2));
-    }
-    
+.bg-green-box::after,
+.bg-white-box::after,
+.bg-yellow-box::after,
+.bg-blue-box::after {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  content: "";
+  z-index: -1;
+  border-radius: 45px;
+}
+
+.bg-green-box::after {
+  background: linear-gradient(71deg, #0d1212, #3da077, #0d1212);
+}
+
+.bg-white-box::after {
+  background: linear-gradient(71deg, #121013, #b0afb0, #121013);
+}
+
+.bg-yellow-box::after {
+  background: linear-gradient(71deg, #110e0e, #afa220, #110e0e);
+}
+
+.bg-blue-box::after {
+  background: linear-gradient(71deg, #0c0a0e, #5f6fad, #0c0a0e);
+}
+
+.card-title {
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 40px;
+  font-style: normal;
+  font-size: 28px;
+  padding-bottom: 8px;
+}
+
+.card-description {
+  font-weight: 600;
+  line-height: 32px;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 16px;
+  max-width: 470px;
+}
+
  .ag-format-container {
       width: 1142px;
       margin: 0 auto;
