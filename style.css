@@ -1,0 +1,395 @@
+:root {
+      --hover-glow: #ffd700;
+      --primary: rgba(0,212,255,0.9);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Noto Sans Bengali', sans-serif;
+      color: #fff;
+      background: url('https://images.unsplash.com/photo-1619204715997-1367fe5812f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1889&q=80') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1200px;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo svg {
+      height: 32px;
+      fill: currentColor;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 300;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--hover-glow);
+      text-shadow: 0 0 8px var(--hover-glow);
+    }
+
+    .nav-links svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      transition: all 0.4s ease;
+    }
+
+    .nav-links a:hover svg {
+      fill: var(--hover-glow);
+      filter: drop-shadow(0 0 6px var(--hover-glow));
+    }
+
+    .hamburger {
+      width: 30px;
+      height: 20px;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 2px;
+      background: currentColor;
+      border-radius: 2px;
+      transition: all 0.4s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+      animation: flipIn 0.6s ease forwards;
+    }
+
+    .mobile-nav.show {
+      display: flex;
+    }
+
+    @keyframes flipIn {
+      0% {
+        transform: rotateX(-90deg);
+        opacity: 0;
+      }
+      100% {
+        transform: rotateX(0);
+        opacity: 1;
+      }
+    }
+
+    .mobile-nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .mobile-nav a:hover {
+      color: var(--hover-glow);
+      text-shadow: 0 0 8px var(--hover-glow);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Hero Card Styles */
+    .container {
+      margin-top: 120px;
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      background-color: rgba(17, 25, 40, 0.25);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.125);
+      padding: 38px;
+      filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .banner-image {
+      background-image: url('https://images.unsplash.com/photo-1641326201918-3cafc641038e?auto=format&fit=crop&w=1887&q=80');
+      background-position: center;
+      background-size: cover;
+      height: 300px;
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    h1 {
+      font-family: 'Noto Sans Bengali', sans-serif;
+      color: rgba(255,255,255,0.98);
+      font-size: 2.2rem;
+      margin-top: 16px;
+    }
+
+    p {
+      color: #fff;
+      font-family: 'Noto Sans Bengali', sans-serif;
+      font-size: 0.9rem;
+      line-height: 150%;
+      letter-spacing: 1px;
+      margin-top: 8px;
+    }
+
+    .button-wrapper {
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      border: none;
+      padding: 12px 24px;
+      border-radius: 24px;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+
+    .outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid rgba(0, 212, 255, 0.6);
+      transition: all .3s ease;
+    }
+
+    .outline:hover {
+      transform: scale(1.1);
+      color: rgba(255, 255, 255, 0.9);
+      border-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .fill {
+      background: var(--primary);
+      color: rgba(255,255,255,0.95);
+      font-weight: bold;
+      transition: all .3s ease;
+    }
+
+    .fill:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 8px 5px rgba(0,0,0,0.2));
+    }
+    
+ .ag-format-container {
+      width: 1142px;
+      margin: 0 auto;
+    }
+
+    .ag-courses_box {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 50px 0;
+    }
+
+    .ag-courses_item {
+      flex-basis: calc(33.33333% - 30px);
+      margin: 0 15px 30px;
+      overflow: hidden;
+      border-radius: 28px;
+    }
+
+    .ag-courses-item_link {
+      display: block;
+      padding: 30px 20px;
+      background-color: #121212;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Noto Sans Bengali', sans-serif;
+      font-weight: 300;
+    }
+
+    .ag-courses-item_link:hover,
+    .ag-courses-item_link:hover .ag-courses-item_date {
+      text-decoration: none;
+      color: #FFF;
+    }
+
+    .ag-courses-item_link:hover .ag-courses-item_bg {
+      transform: scale(10);
+    }
+
+    .ag-courses-item_title {
+      min-height: 87px;
+      margin: 0 0 25px;
+      font-weight: bold;
+      font-size: 30px;
+      color: #FFF;
+      z-index: 2;
+      position: relative;
+    }
+
+    .ag-courses-item_date-box {
+      font-size: 18px;
+      color: #FFF;
+      z-index: 2;
+      position: relative;
+    }
+
+    .ag-courses-item_date {
+      font-weight: bold;
+      color: #f9b234;
+      transition: color .5s ease;
+    }
+
+    .ag-courses-item_bg {
+      height: 128px;
+      width: 128px;
+      background-color: #f9b234;
+      z-index: 1;
+      position: absolute;
+      top: -75px;
+      right: -75px;
+      border-radius: 50%;
+      transition: all .5s ease;
+    }
+
+    .ag-courses-item_icon-bg {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      opacity: 0.15;
+      z-index: 1;
+      width: 120px;
+      height: 120px;
+      pointer-events: none;
+      color: currentColor;
+      transition: opacity 0.5s ease;
+    }
+
+    .ag-courses-item_icon-bg svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ag-courses-item_link:hover .ag-courses-item_icon-bg {
+      opacity: 0.3;
+    }
+
+    .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+      background-color: #3ecd5e;
+    }
+
+    .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+      background-color: #e44002;
+    }
+
+    .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+      background-color: #952aff;
+    }
+
+    .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+      background-color: #cd3e94;
+    }
+
+    @media only screen and (max-width: 979px) {
+      .ag-courses_item {
+        flex-basis: calc(50% - 30px);
+      }
+      .ag-courses-item_title {
+        font-size: 24px;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .ag-format-container {
+        width: 96%;
+      }
+    }
+
+    @media only screen and (max-width: 639px) {
+      .ag-courses_item {
+        flex-basis: 100%;
+      }
+      .ag-courses-item_title {
+        min-height: 72px;
+        line-height: 1;
+        font-size: 24px;
+      }
+      .ag-courses-item_link {
+        padding: 22px 40px;
+      }
+      .ag-courses-item_date-box {
+        font-size: 16px;
+      }
+    }
+  
