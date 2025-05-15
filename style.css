@@ -1,7 +1,7 @@
 .ag-btn {
   margin-top: 20px;
   padding: 12px 20px;
-  background-color: #fff;
+  background: #e0e0e0;
   color: #121212;
   font-size: 16px;
   font-weight: bold;
@@ -10,15 +10,17 @@
   cursor: pointer;
   z-index: 2;
   position: relative;
-  transform: perspective(1px) translateZ(0);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 8px 8px 15px #bebebe,
+              -8px -8px 15px #ffffff;
 }
 
 .ag-btn:hover {
-  transform: scale(1.1) translateZ(0);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05);
+  box-shadow: inset 4px 4px 8px #bebebe,
+              inset -4px -4px 8px #ffffff;
 }
+
 .dp.svg {
   position: fixed;
   top: 0;
