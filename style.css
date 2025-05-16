@@ -1,4 +1,15 @@
+.hover-3d {
+      perspective: 1000px;
+    }
+    .hover-3d img {
+      transition: transform 0.5s ease;
+      transform-style: preserve-3d;
+    }
+    .hover-3d:hover img {
+      transform: rotateY(10deg) rotateX(5deg) scale(1.03);
+    }
 .ag-btn {
+  z-index: 1;
   margin-top: 20px;
   padding: 12px 20px;
   background: #e0e0e0;
