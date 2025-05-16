@@ -105,14 +105,7 @@ a img.icon {
   position: absolute;
   left: 0;
 }
-
-.logo img {
-  width: 100px;
-  height: auto;
-}
-
-
-    .nav-links {
+ .nav-links {
       display: flex;
       gap: 20px;
     }
