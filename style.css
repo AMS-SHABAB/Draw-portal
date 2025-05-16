@@ -8,18 +8,18 @@
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  z-index: 2;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 8px 8px 15px #bebebe,
-              -8px -8px 15px #ffffff;
+  box-shadow: inset 2px 2px 5px #cfcfcf,
+              inset -2px -2px 5px #f5f5f5;
 }
 
 .ag-btn:hover {
-  transform: scale(1.05);
-  box-shadow: inset 4px 4px 8px #bebebe,
-              inset -4px -4px 8px #ffffff;
+  transform: scale(1.02);
+  box-shadow: inset 4px 4px 8px #cfcfcf,
+              inset -4px -4px 8px #f5f5f5;
 }
+
 
 .dp.svg {
   position: fixed;
