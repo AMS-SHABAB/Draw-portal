@@ -103,6 +103,7 @@ a img.icon {
 
     .logo svg {
       height: 32px;
+      position: absolute;
       fill: currentColor;
     }
 
